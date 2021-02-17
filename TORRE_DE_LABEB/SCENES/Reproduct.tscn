@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://SPRITES/acasalamento.png" type="Texture" id=1]
+
+[node name="Reproduct" type="Button"]
+margin_left = 430.893
+margin_top = 258.914
+margin_right = 511.893
+margin_bottom = 311.914
+icon = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 89.1905
+margin_top = 20.2165
+margin_right = 129.19
+margin_bottom = 34.2165
+__meta__ = {
+"_edit_use_anchors_": false
+}

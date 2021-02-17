@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://SCENES/Back.gd" type="Script" id=1]
+[ext_resource path="res://Xolonium-Regular.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 23
+font_data = ExtResource( 2 )
+
+[node name="Historia" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_right = 1032.0
+margin_bottom = 640.0
+custom_fonts/font = SubResource( 1 )
+text = "TORRE DE LEBAB 
+
+numa realidade alternativa,
+há dois deuses QuaseTodoPoderosos
+um belo dia, os humanos residentes desse universo decidem construir uma torre 
+para chegar até o céu
+A torre de Lebab.
+O deus Nelipe Feto não queria permitir tamanha afronta, e começou a confundí-los.
+ Mas você, Orochyeuah, não vê problema nisso então decidiu ajudá-los. 
+apesar de os dois serem deuses, Nelipe conta com energia criativa infinita, 
+ja vc, ta mais pra uma entidade atemporal. então vc vai precisar da ajuda dos humanos para coletar energia, para que vc possa ajudá-los."
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="."]
+margin_left = 824.0
+margin_top = 8.0
+margin_right = 870.0
+margin_bottom = 28.0
+rect_scale = Vector2( 4.13813, 3.83146 )
+text = "BACK"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Back" to="Back" method="_on_Back_pressed"]

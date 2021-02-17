@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://SPRITES/rock.png" type="Texture" id=1]
+[ext_resource path="res://SPRITES/rockcr.png" type="Texture" id=2]
+
+[node name="Rock" type="Button"]
+margin_right = 12.0
+margin_bottom = 20.0
+icon = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="miners" type="Label" parent="."]
+margin_left = 84.9259
+margin_top = 17.8583
+margin_right = 131.926
+margin_bottom = 37.8583
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="rockCounter" type="Sprite" parent="."]
+position = Vector2( 294.384, -156.738 )
+scale = Vector2( 1.92954, 1.61385 )
+texture = ExtResource( 2 )
+
+[node name="rockCurrency" type="Label" parent="rockCounter"]
+margin_left = 16.3694
+margin_top = -4.22028
+margin_right = 56.3694
+margin_bottom = 9.77972
+__meta__ = {
+"_edit_use_anchors_": false
+}

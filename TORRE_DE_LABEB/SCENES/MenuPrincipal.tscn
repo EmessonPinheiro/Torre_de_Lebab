@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://SCRIPTS/MenuPrincipal.gd" type="Script" id=1]
+
+[node name="MenuPrincipal" type="Button"]
+margin_left = 352.0
+margin_top = 32.0
+margin_right = 640.0
+margin_bottom = 128.0
+text = "play"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="História" type="Button" parent="."]
+margin_top = 136.0
+margin_right = 288.0
+margin_bottom = 216.0
+text = "STORY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="." to="." method="_on_MenuPrincipal_pressed"]
+[connection signal="pressed" from="História" to="." method="_on_Histria_pressed"]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://SPRITES/wood.png" type="Texture" id=1]
+[ext_resource path="res://SPRITES/woodcr.png" type="Texture" id=2]
+
+[node name="Wood" type="Button"]
+margin_left = 825.968
+margin_top = 406.423
+margin_right = 906.968
+margin_bottom = 459.423
+icon = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WoodCutters" type="Label" parent="."]
+margin_left = 93.1628
+margin_top = 6.00906
+margin_right = 133.163
+margin_bottom = 27.0091
+
+[node name="woodcr" type="Sprite" parent="."]
+position = Vector2( -487.099, -153.488 )
+scale = Vector2( 1.47329, 1.38977 )
+texture = ExtResource( 2 )
+
+[node name="WoodCurrency" type="Label" parent="woodcr"]
+margin_left = 19.0
+margin_top = -10.0
+margin_right = 81.0
+margin_bottom = 23.0
+rect_scale = Vector2( 1.2, 1.2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

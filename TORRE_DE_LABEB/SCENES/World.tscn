@@ -1,0 +1,113 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://SPRITES/escopo geral.png" type="Texture" id=1]
+[ext_resource path="res://SCRIPTS/World.gd" type="Script" id=2]
+[ext_resource path="res://SCENES/AddPD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://SCENES/Reproduct.tscn" type="PackedScene" id=4]
+[ext_resource path="res://SCENES/Rock.tscn" type="PackedScene" id=5]
+[ext_resource path="res://SCENES/Wood.tscn" type="PackedScene" id=6]
+[ext_resource path="res://SCENES/Tower.tscn" type="PackedScene" id=7]
+[ext_resource path="res://SCENES/Upgrade.tscn" type="PackedScene" id=8]
+[ext_resource path="res://SCENES/Logging.tscn" type="PackedScene" id=9]
+[ext_resource path="res://SCENES/Quarry.tscn" type="PackedScene" id=10]
+[ext_resource path="res://SCENES/UpgradeQ.tscn" type="PackedScene" id=11]
+[ext_resource path="res://SCENES/UpgradeL.tscn" type="PackedScene" id=12]
+[ext_resource path="res://songs/fundo.mp4 (online-audio-converter.com) (1).wav" type="AudioStream" id=13]
+
+[node name="World" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -24.0
+margin_top = -8.0
+margin_right = 1032.0
+margin_bottom = 600.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Prodution" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="AttMobs" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="Tower" parent="." instance=ExtResource( 7 )]
+position = Vector2( 504, 384 )
+
+[node name="Logging" parent="." instance=ExtResource( 9 )]
+position = Vector2( 896, 464 )
+scale = Vector2( 8, 7.0625 )
+
+[node name="Quarry" parent="." instance=ExtResource( 10 )]
+position = Vector2( 120, 467 )
+scale = Vector2( 7.5, 6.9375 )
+
+[node name="BotaoPai" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wood" parent="BotaoPai" instance=ExtResource( 6 )]
+margin_left = 920.0
+margin_top = 190.0
+margin_right = 1001.0
+margin_bottom = 243.0
+
+[node name="Reproduct" parent="BotaoPai" instance=ExtResource( 4 )]
+margin_left = 456.0
+margin_top = 544.0
+margin_right = 537.0
+margin_bottom = 597.0
+
+[node name="AddPD" parent="BotaoPai" instance=ExtResource( 3 )]
+
+[node name="Rock" parent="BotaoPai" instance=ExtResource( 5 )]
+margin_left = 8.0
+margin_top = 184.0
+margin_right = 89.0
+margin_bottom = 237.0
+
+[node name="Upgrade" parent="BotaoPai" instance=ExtResource( 8 )]
+margin_left = 480.0
+margin_top = 424.0
+margin_right = 524.0
+margin_bottom = 462.0
+
+[node name="UpgradeQ" parent="BotaoPai" instance=ExtResource( 11 )]
+margin_left = 184.0
+margin_top = 560.0
+margin_right = 228.0
+margin_bottom = 598.0
+rect_scale = Vector2( 1.5, 1 )
+
+[node name="UpgradeL" parent="BotaoPai" instance=ExtResource( 12 )]
+margin_left = 760.0
+margin_top = 552.0
+margin_right = 804.0
+margin_bottom = 590.0
+rect_scale = Vector2( 1.5, 1 )
+
+[node name="NelipeEvents" type="Timer" parent="."]
+wait_time = 25.0
+autostart = true
+
+[node name="Fundo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 13 )
+[connection signal="timeout" from="Prodution" to="." method="_on_Prodution_timeout"]
+[connection signal="timeout" from="AttMobs" to="." method="_on_AttMobs_timeout"]
+[connection signal="pressed" from="BotaoPai/Wood" to="." method="_on_Wood_pressed"]
+[connection signal="pressed" from="BotaoPai/Reproduct" to="." method="_on_Reproduct_pressed"]
+[connection signal="pressed" from="BotaoPai/AddPD" to="." method="_on_AddPD_pressed"]
+[connection signal="pressed" from="BotaoPai/Rock" to="." method="_on_Rock_pressed"]
+[connection signal="pressed" from="BotaoPai/Upgrade" to="." method="_on_Upgrade_pressed"]
+[connection signal="pressed" from="BotaoPai/UpgradeQ" to="." method="_on_UpgradeQ_pressed"]
+[connection signal="pressed" from="BotaoPai/UpgradeL" to="." method="_on_UpgradeL_pressed"]
+[connection signal="timeout" from="NelipeEvents" to="." method="_on_NelipeEvents_timeout"]
+[connection signal="finished" from="Fundo" to="." method="_on_Fundo_finished"]
